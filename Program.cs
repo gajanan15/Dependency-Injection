@@ -12,13 +12,27 @@ namespace Dependency_Injection
     {
         public static void Main(string[] args)
         {
+            // Constructor Injection
+            Console.WriteLine("Constructor Injection");
             IAccount caccount = new CurrentAccount();
             Account a = new Account(caccount);
             a.PrintDetails();
 
             IAccount saccount = new SavingAccount();
             Account b = new Account(saccount);
-            b.PrintDetails();   
+            b.PrintDetails();
+            Console.WriteLine("\n");
+            //Console.ReadLine();
+
+            // Property Injection
+            Console.WriteLine("Property Injection");
+            PropertyInjection p = new PropertyInjection();
+            p.account = new PropCurrentAccount();
+            p.PrintDetails();
+
+            p.account = new PropSavingAccount();
+            p.PrintDetails();
+
             Console.ReadLine();
         }
 
