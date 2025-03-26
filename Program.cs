@@ -33,6 +33,14 @@ namespace Dependency_Injection
             p.account = new PropSavingAccount();
             p.PrintDetails();
 
+            Console.WriteLine("\n");
+
+            // Method Injection
+            Console.WriteLine("Method Injection");
+            MethodInjection methodInjection = new MethodInjection();
+            methodInjection.PrintAccounts(new MethodCurrentAccount());
+
+            methodInjection.PrintAccounts(new MethodSavingAccount());   
             Console.ReadLine();
         }
 
